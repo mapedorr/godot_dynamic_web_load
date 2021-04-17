@@ -1,0 +1,156 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/images/bg_bathroom_afternoon.png" type="Texture" id=1]
+[ext_resource path="res://src/Main.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/bg_cafeteria_afternoon.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/bg_cafeteria_night.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/bg_cafeteria_morning.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/mx_tutorial.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/mx_menu.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/mx_ingame.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/ui_lose.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/fonts/fantasquesansmono-bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/resources/default_button.tres" type="StyleBox" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.980392, 0.741176, 0.184314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.980392, 0.741176, 0.184314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.235294, 0.219608, 0.211765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.980392, 0.741176, 0.184314, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.235294, 0.219608, 0.211765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.980392, 0.741176, 0.184314, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.827451, 0.52549, 0.607843, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 10 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="A" type="TextureButton" parent="PanelContainer/GridContainer"]
+margin_right = 510.0
+margin_bottom = 298.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="B" type="TextureButton" parent="PanelContainer/GridContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 298.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="C" type="TextureButton" parent="PanelContainer/GridContainer"]
+margin_top = 302.0
+margin_right = 510.0
+margin_bottom = 600.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="D" type="TextureButton" parent="PanelContainer/GridContainer"]
+margin_left = 514.0
+margin_top = 302.0
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="PanelContainer"]
+margin_left = 309.0
+margin_top = 274.0
+margin_right = 715.0
+margin_bottom = 326.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = ExtResource( 11 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.219608, 0.211765, 1 )
+custom_colors/font_color_hover = Color( 0.235294, 0.219608, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.235294, 0.219608, 0.211765, 1 )
+text = "Vamos a un mundo mejor"
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="A" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+
+[node name="B" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+
+[node name="C" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+
+[node name="D" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )

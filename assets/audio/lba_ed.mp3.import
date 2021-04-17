@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lba_ed.mp3-115c3846d13aefd05a67684f7d3ec25d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/lba_ed.mp3"
+dest_files=[ "res://.import/lba_ed.mp3-115c3846d13aefd05a67684f7d3ec25d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
